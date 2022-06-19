@@ -15,6 +15,7 @@ body {
     height: 100vh;
 }
 
-svg#bootle1{
+g#bottle{
     margin: 0px;
+    transition: all 0.5s;
 }
