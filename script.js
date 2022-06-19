@@ -1,31 +1,26 @@
 
-
-
-function bottlemouseoverLeft(event){
-    var svg = document.getElementById('bottle');
-
-
-    //svg.classList.add('hoverleft');
-
-    //transition: ease-out 200ms;
-    //
-    
-
-    //svg.setAttribute('transition', 'all 2s' )
-    svg.setAttribute('transform', 'rotate(5) translate(240 -20)')
-    var pos_x = event.clientX;
-    var pos_y = event.clientY;
-
-    console.log('X:' + pos_x + ' Y:' + pos_y);
-
-   // svg.style.left =  pos_x+"px";
-    //svg.style.right =  pos_y+"px";
-
+function ShowBorder(){
+    // Toggle Border //
 }
 
-function bottleonmouseleaveLeft(event){
-    var svg = document.getElementById('bottle');
+var svg = document.getElementById('bottleComp');
 
+function bottlemouseOverLeft(event){
+    svg.setAttribute('transform', ' rotate(10) translate(1040 -3990)');
 
-    svg.setAttribute('transform', 'rotate(0) translate(-30 298)')
+    var pos_x = event.clientX;
+    var pos_y = event.clientY;
+    console.log('X:' + pos_x + ' Y:' + pos_y);
+}
+
+function bottleonmouseOutLeft(event){
+    svg.setAttribute('transform', 'rotate(0) translate(1103 -3244)');
+}
+
+function bottlemouseOverRight(event){
+    svg.setAttribute('transform', ' rotate(10) translate(1040 -3990)');
+}
+
+function bottleonmouseOutRight(event){
+    svg.setAttribute('transform', 'rotate(0) translate(1103 -3244)');
 }
