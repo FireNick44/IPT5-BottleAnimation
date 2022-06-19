@@ -13,9 +13,41 @@ body {
     flex-direction: column;
     width: 100%;
     height: 100vh;
+    background-color: rgb(208 208 208 / 66%);
 }
 
-g#bottle{
+button{
+    color: #ffffff;
+    background-color: rgb(53, 54, 58);
+    border: 1px solid transparent;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 500;
+    padding: 6px 10px;
+    text-align: center;
+    vertical-align: middle;
+    transition: .3s all;
+}
+
+nav{
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+}
+
+button:hover {
+    background-color: rgb(32, 33, 36);
+    transition: .3s all;
+}
+
+g#bottleComp{
     margin: 0px;
     transition: all 0.5s;
 }
+
+svg#SingleBottle{
+    transform: translateY(-4px);
+    overflow-y: hidden;
+}
+
