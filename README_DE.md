@@ -40,6 +40,8 @@ Für mehr Informationen können Sie gerne mein [Webportfolio](https://github.com
 4. Makelloses Ergebnis für einen Perfektionisten
 5. Schlaf ;)
 
+## Journal
+
 ## Bekannte Probleme
 
 ```

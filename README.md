@@ -40,7 +40,6 @@ For more information visit my [web portfolio](https://github.com/FireNick44/webp
 5. Sleep ;)
 
 
-## Journal
 
 ## Known issues
 
