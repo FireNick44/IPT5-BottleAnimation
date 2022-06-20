@@ -41,6 +41,7 @@ Für mehr Informationen können Sie gerne mein [Webportfolio](https://github.com
 5. Schlaf ;)
 
 ## Journal
+[Zum Journal [DE] ](./JOURNAL_DE.md)
 
 ## Bekannte Probleme
 

@@ -39,7 +39,8 @@ For more information visit my [web portfolio](https://github.com/FireNick44/webp
 4. Flawless result for a perfectionist
 5. Sleep ;)
 
-
+## Journal
+[Go to journal [DE] ](./JOURNAL_DE.md)
 
 ## Known issues
 
