@@ -9,6 +9,16 @@ function Sleep(milliseconds) {
     return new Promise(resolve => setTimeout(resolve, milliseconds));
 }
 
+
+window.addEventListener('resize', windowResize());
+
+function windowResize(){
+    var windowWidth = document.documentElement.clientWidth;
+    var windowHeight = document.documentElement.clientHeight;
+
+    console.log( windowWidth + ' X ' + windowHeight);
+}
+
 function mousemove(event){
 
     var mousecircle = document.getElementById('mousecircle');
@@ -19,10 +29,9 @@ function mousemove(event){
     var x = e_pos_x - 15;
     var y = e_pos_y - 15;
 
-    console.log('X:' + e_pos_x + ' Y:' + e_pos_y);
-
     mousecircle.style.left = x + 'px';
     mousecircle.style.top = y + 'px';
+    //console.log('X:' + e_pos_x + ' Y:' + e_pos_y);
 }
 
 function ShowBorder(){
@@ -49,10 +58,9 @@ async function bottlemouseOverLeft(event){
     left.classList.remove("disappear");
     right.classList.remove("disappear");
 
-
-    var pos_x = event.clientX;
-    var pos_y = event.clientY;
-    console.log('X:' + pos_x + ' Y:' + pos_y);
+    //var pos_x = event.clientX;
+    //var pos_y = event.clientY;
+    //console.log('X:' + pos_x + ' Y:' + pos_y);
 }
 
 async function bottlemouseOverRight(event){
@@ -64,10 +72,9 @@ async function bottlemouseOverRight(event){
     right.classList.remove("disappear");
     left.classList.remove("disappear");
 
-
-    var pos_x = event.clientX;
-    var pos_y = event.clientY;
-    console.log('X:' + pos_x + ' Y:' + pos_y);
+    //var pos_x = event.clientX;
+    //var pos_y = event.clientY;
+    //console.log('X:' + pos_x + ' Y:' + pos_y);
 }
 
 async function bottleonmouseOutLeft(event){

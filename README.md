@@ -39,12 +39,44 @@ For more information visit my [web portfolio](https://github.com/FireNick44/webp
 4. Flawless result for a perfectionist
 5. Sleep ;)
 
+
+## Journal
+
 ## Known issues
 
 ```
 Still a work in progress ;)
 ```
 
+## Installation
+
+Clone or download the project, open the project in visual studio code. The 2D animation in the folder [BottleAnimation](./BottleAnimation) does not need any external libraries.
+However, for the 3D animation [Three](./Three) and [WorkingThreeBase](./WorkingThreeBase) folders you need a couple of modules.  Due to storage and privacy reasons there is no node-modules folder. Therefore, you need to install the following modules manually.
+
+### Dependencies:
+
+ - vite
+ - three
+
+
+### How to Install
+
+Install: _(paste the following code to a bash or git terminal)_
+
+```
+npm install vite three
+```
+
+### Running the Project
+
+```
+npm run dev
+```
+
+### Open page on 8000 port
+```
+http://localhost:8000/
+```
 
 ## License
 Project is [MIT licensed](./LICENSE)

@@ -5,8 +5,12 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 function main(){
   const scene = new THREE.Scene();
 
-  var box = genObject(3,3,3);
+  var box = genObject(20,3,3);
   scene.add(box);
+
+  var box1 = genObject(3,30,20);
+  box1.translateX(10)
+  scene.add(box1);
 
   //var floor = genFloor(10);
   //scene.add(floor);

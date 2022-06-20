@@ -46,5 +46,36 @@ Für mehr Informationen können Sie gerne mein [Webportfolio](https://github.com
 Immernoch im Bau ;)
 ```
 
+## Installation
+
+Klonen Sie das Projekt oder laden Sie es herunter, danach öffnen Sie das Projekt in Visual Studio Code. Für die 2D-Animation im Ordner [BottleAnimation](./BottleAnimation) werden keine externen Bibliotheken benötigt.
+Für die 3D-Animation in den Ordnern [Three](./Three) und [WorkingThreeBase](./WorkingThreeBase) benötigen Sie jedoch einige Module.  Aus Speicher- und Datenschutzgründen gibt es keinen node-modules-Ordner. Daher muss man die folgenden Module manuell installieren.
+
+
+### Abhängigkeiten:
+
+ - vite
+ - three
+
+
+### Projekt Installation
+
+Installation: _(fügen Sie den folgenden Code in ein Bash- oder Git-Terminal ein.)_
+
+```
+npm install vite three
+```
+
+### Projekt Ausführung 
+
+```
+npm run dev
+```
+
+### Seite auf Port 8000 aufrufen
+```
+http://localhost:8000/
+```
+
 ## Lizenz
 Projekt ist [MIT lizenziert](./LICENSE)
