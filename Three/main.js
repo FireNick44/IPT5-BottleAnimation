@@ -1,12 +1,23 @@
 import * as THREE from 'three';
+
+//camera controller
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 
+//loader for 3D models
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 
+
+//set up new scene 
 const scene = new THREE.Scene();
 
 console.log('running main');
 main();
+
+
+//use rndm func 
+//var rndmBox =  randObj();
+//scene.add(rndmBox);
+
 
 function main(){
 
@@ -16,29 +27,33 @@ function main(){
   //var box1 = genObject(300,300,300);
   //scene.add(box1);
 
+  //use loader for 3D model
   const loader = new GLTFLoader();
   loader.load( './model/bottle3D/scene.gltf', ( gltf ) => {
+    
+    //transform 3D model
     gltf.scene.scale.setScalar(2);
     gltf.scene.translateY(20);
 
     scene.add( gltf.scene );
-
   });
 
+  //light source 
   const light = new THREE.HemisphereLight( 0xffffbb, 0x080820, 1 );
   scene.add( light );
 
+  //camera perspective
   const camera = new THREE.PerspectiveCamera(
     50, 
     window.innerWidth / window.innerHeight, 
     1, 
     1000 
   );
-  
+  //set Z coord to 30;
   camera.position.setZ(30);
   
   const renderer = new THREE.WebGLRenderer({
-    //select canvas
+    //select canvas by id bg 
     canvas: document.getElementById('bg'),
   });
   
@@ -48,6 +63,7 @@ function main(){
   //renderer.setClearColor()
   renderer.setClearColor( 0x222222, 5);
 
+  //grid helping layout 
   const gridHelper = new THREE.GridHelper(200, 50);
   scene.add(gridHelper);
   
@@ -57,6 +73,7 @@ function main(){
   update(renderer, scene, camera, controls);
 }
 
+//for using a new box object, with no shader or textures
 function genObject(x, y, z){
   var geo = new THREE.BoxGeometry(x, y, z);
   var mat = new THREE.MeshBasicMaterial({
@@ -67,6 +84,7 @@ function genObject(x, y, z){
   return mesh;
 }
 
+//for a white floor with no hight 
 function genFloor(x, y){
   var geo = new THREE.PlaneGeometry(x, y);
   var mat = new THREE.MeshBasicMaterial({
@@ -78,6 +96,7 @@ function genFloor(x, y){
   return mesh;
 }
 
+//updates canvas, qu
 function update(renderer, scene, camera, controls){
   renderer.render(scene, camera);
 
@@ -89,10 +108,7 @@ function update(renderer, scene, camera, controls){
   
 }
 
-//var rndmBox =  randObj();
-//scene.add(rndmBox);
-
-
+//gens a rndm object
 function randObj(){
 
   var box = genObject( 
@@ -108,6 +124,7 @@ box.translateZ(getRandom(-100, 100));
   return box
 }
 
+// getRandom
 function getRandom(min, max){
   var rndm = Math.floor(Math.random()*max);
   var plusOrMinus = Math.random() < 0.5 ? -1 : 1;

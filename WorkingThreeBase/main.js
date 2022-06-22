@@ -2,34 +2,41 @@ import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 
 
+
 function main(){
-  const scene = new THREE.Scene();
 
-  var box = genObject(3,3,3);
-  scene.add(box);
+  //var box = genObject(20,3,3);
+  //scene.add(box);
 
-  //var floor = genFloor(10);
-  //scene.add(floor);
+  //var box1 = genObject(300,300,300);
+  //scene.add(box1);
 
+  //light source 
+  const light = new THREE.HemisphereLight( 0xffffbb, 0x080820, 1 );
+  scene.add( light );
+
+  //camera perspective
   const camera = new THREE.PerspectiveCamera(
     50, 
     window.innerWidth / window.innerHeight, 
     1, 
     1000 
   );
-
+  //set Z coord to 30;
   camera.position.setZ(30);
-
-
+  
   const renderer = new THREE.WebGLRenderer({
-    //select canvas
+    //select canvas by id bg 
     canvas: document.getElementById('bg'),
   });
   
   //set ratio + size
   renderer.setSize( window.innerWidth, window.innerHeight );
   renderer.setPixelRatio( window.devicePixelRatio );
+  //renderer.setClearColor()
+  renderer.setClearColor( 0x222222, 5);
 
+  //grid helping layout 
   const gridHelper = new THREE.GridHelper(200, 50);
   scene.add(gridHelper);
   
@@ -38,6 +45,30 @@ function main(){
   
   update(renderer, scene, camera, controls);
 }
+
+//for using a new box object, with no shader or textures
+function genObject(x, y, z){
+  var geo = new THREE.BoxGeometry(x, y, z);
+  var mat = new THREE.MeshBasicMaterial({
+    color: 0x222222
+  });
+
+  var mesh = new THREE.Mesh(geo, mat);
+  return mesh;
+}
+
+//for a white floor with no hight 
+function genFloor(x, y){
+  var geo = new THREE.PlaneGeometry(x, y);
+  var mat = new THREE.MeshBasicMaterial({
+    color: 0xffffff, 
+    side: THREE.DoubleSide
+  });
+
+  var mesh = new THREE.Mesh(geo, mat);
+  return mesh;
+}
+
 
 function genObject(x, y, z){
   var geo = new THREE.BoxGeometry(x, y, z);
@@ -74,18 +105,3 @@ function update(renderer, scene, camera, controls){
 
 console.log('running main');
 main();
-
-
-
-
-
-
-
-//const pointLight = new THREE.PointLight(0xffffff);
-//pointLight.position.set(5,5,5);
-
-//scene.add(pointLight);
-
-
-
-
