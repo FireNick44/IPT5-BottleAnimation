@@ -96,7 +96,7 @@ function genFloor(x, y){
   return mesh;
 }
 
-//updates canvas, qu
+//updates canvas
 function update(renderer, scene, camera, controls){
   renderer.render(scene, camera);
 
